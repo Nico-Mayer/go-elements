@@ -1,45 +1,20 @@
-# Go REST Api
+# ⚛️ Go-Elements API
+Go-Elements is a simple and efficient REST API built with Golang, providing comprehensive information about the periodic table's elements through a variety of endpoints.
 
-> This is a simple REST API written in Go that follows the Model View Controller (MVC) pattern. The
-> API utilizes only the Go standard library, no third-party dependencies.
+# Features
+- Retrieve detailed information about elements based on atomic number or symbol
+- Access elements by period, group, block, or category
+- Search elements by name or symbol
+- Easy-to-use RESTful design
 
-## Getting Started
+# API Usage
+The API provides the following endpoints:
 
-To get started, follow these steps:
-
-**Clone the repository:**
-
-```bash
-git clone https://github.com/nico-mayer/go-api.git
-```
-
-**Change to the project directory:**
-
-```bash
-cd go-api
-```
-
-**Run the application:**
-
-```bash
-go run .
-```
-
-> The application will start listening on port `8080`. You can test the API by making requests to the
-> following endpoints:
-
--   `GET /people` : Returns all people.
--   `POST /people/create` : Creates a new Person
-    -   Body format:
-    ```json
-    {
-    	"id": "1",
-    	"firstName": "John",
-    	"lastName": "Doe",
-    	"age": 30
-    }
-    ```
-
-## Usage
-
-You can use this API as a starting point for your own Go projects.
+- GET `/elements` - Retrieve a list of all elements with their basic information
+- GET `/elements/atomic_number/{atomic_number}` - Retrieve detailed information about an element based on its atomic number
+- GET `/elements/symbol/{symbol}` - Retrieve detailed information about an element based on its symbol
+- GET `/elements/period/{period}` - Retrieve a list of elements in a specific period
+- GET `/elements/group/{group}` - Retrieve a list of elements in a specific group
+- GET `/elements/block/{block}` - Retrieve a list of elements in a specific block (s, p, d, or f block)
+- GET `/elements/category/{category}` - Retrieve a list of elements in a specific category (e.g., alkali metal, noble gas, etc.)
+- GET `/elements/search?query={query}` - Search for elements by name or symbol and return a list of matching elements
