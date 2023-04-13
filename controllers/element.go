@@ -31,3 +31,16 @@ func ElementByAtomicNumber(res http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(res).Encode(element)
 
 }
+
+func GetAllElements(res http.ResponseWriter, req *http.Request) {
+	if req.Method != "GET" {
+		http.Error(res, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	elements := models.AllElements()
+
+	res.Header().Set("Content-Type", "application/json")
+	res.WriteHeader(http.StatusOK)
+	json.NewEncoder(res).Encode(elements)
+}

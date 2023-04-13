@@ -20,6 +20,7 @@ func main() {
 }
 
 func handleRequests() {
+	http.HandleFunc("/elements", controllers.GetAllElements)
 	http.HandleFunc("/element/atomicNumber/", controllers.ElementByAtomicNumber)
 
 	fmt.Println("Server listening on PORT: " + config.PORT)

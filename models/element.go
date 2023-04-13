@@ -15,7 +15,7 @@ type Element struct {
 	NumberOfProtons   int      `json:"numberOfProtons"`
 	NumberOfElectrons int      `json:"numberOfElectrons"`
 	Period            int      `json:"period"`
-	Group             int      `json:"group"`
+	Group             *int     `json:"group"`
 	Phase             string   `json:"phase"`
 	Type              *string  `json:"type"`
 	AtomicRadius      *float64 `json:"atomicRadius"`
@@ -77,4 +77,55 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 	}
 
 	return element
+}
+
+func AllElements() []Element {
+	query := `SELECT * FROM elements`
+	rows, err := db.DB.Query(query)
+	if err != nil {
+		fmt.Println(err)
+		return []Element{}
+	}
+
+	var elements []Element
+	for rows.Next() {
+		var element Element
+		err := rows.Scan(
+			&element.AtomicNumber,
+			&element.Element,
+			&element.Symbol,
+			&element.AtomicMass,
+			&element.NumberOfNeutrons,
+			&element.NumberOfProtons,
+			&element.NumberOfElectrons,
+			&element.Period,
+			&element.Group,
+			&element.Phase,
+			&element.Type,
+			&element.AtomicRadius,
+			&element.Electronegativity,
+			&element.FirstIonization,
+			&element.Density,
+			&element.MeltingPoint,
+			&element.BoilingPoint,
+			&element.NumberOfIsotopes,
+			&element.YearOfDiscovery,
+			&element.SpecificHeat,
+			&element.NumberOfShells,
+			&element.NumberOfValence,
+			&element.Radioactive,
+			&element.Natural,
+			&element.Metal,
+			&element.Nonmetal,
+			&element.Metalloid,
+		)
+
+		if err != nil {
+			fmt.Println(err)
+			return []Element{}
+		}
+
+		elements = append(elements, element)
+	}
+	return elements
 }
