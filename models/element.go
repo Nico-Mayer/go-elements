@@ -17,11 +17,6 @@ type Element struct {
 	Period            int      `json:"period"`
 	Group             int      `json:"group"`
 	Phase             string   `json:"phase"`
-	Radioactive       bool     `json:"radioactive"`
-	Natural           bool     `json:"natural"`
-	Metal             bool     `json:"metal"`
-	Nonmetal          bool     `json:"nonmetal"`
-	Metalloid         bool     `json:"metalloid"`
 	Type              *string  `json:"type"`
 	AtomicRadius      *float64 `json:"atomicRadius"`
 	Electronegativity *float64 `json:"electronegativity"`
@@ -34,6 +29,11 @@ type Element struct {
 	SpecificHeat      *float64 `json:"specificHeat"`
 	NumberOfShells    int      `json:"numberOfShells"`
 	NumberOfValence   *int     `json:"numberOfValence"`
+	Radioactive       bool     `json:"radioactive"`
+	Natural           bool     `json:"natural"`
+	Metal             bool     `json:"metal"`
+	Nonmetal          bool     `json:"nonmetal"`
+	Metalloid         bool     `json:"metalloid"`
 }
 
 func ElementByAtomicNumber(atomicNumber int) Element {
@@ -52,11 +52,6 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 		&element.Period,
 		&element.Group,
 		&element.Phase,
-		&element.Radioactive,
-		&element.Natural,
-		&element.Metal,
-		&element.Nonmetal,
-		&element.Metalloid,
 		&element.Type,
 		&element.AtomicRadius,
 		&element.Electronegativity,
@@ -69,6 +64,11 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 		&element.SpecificHeat,
 		&element.NumberOfShells,
 		&element.NumberOfValence,
+		&element.Radioactive,
+		&element.Natural,
+		&element.Metal,
+		&element.Nonmetal,
+		&element.Metalloid,
 	)
 
 	if err != nil {
