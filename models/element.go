@@ -37,7 +37,7 @@ type Element struct {
 
 func ElementByAtomicNumber(atomicNumber int) Element {
 	fmt.Println(atomicNumber)
-	query := `SELECT * FROM elements WHERE "AtomicNumber" = $1`
+	query := `SELECT * FROM elements WHERE atomicnumber = $1`
 	row := db.DB.QueryRow(query, atomicNumber)
 
 	fmt.Println(row)
