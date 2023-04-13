@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	_ "github.com/lib/pq"
-	"github.com/nico-mayer/go-api/config"
+	"github.com/nico-mayer/go-elements/config"
 )
 
 var DB *sql.DB
