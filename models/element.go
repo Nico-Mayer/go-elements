@@ -1,6 +1,8 @@
 package models
 
 import (
+	"fmt"
+
 	"github.com/nico-mayer/go-elements/db"
 )
 
@@ -68,6 +70,7 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 	)
 
 	if err != nil {
+		fmt.Println(err)
 		return Element{}
 	}
 
