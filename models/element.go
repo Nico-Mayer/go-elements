@@ -43,7 +43,7 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 	fmt.Println(row)
 
 	var element Element
-	err := row.Scan(&element.AtomicNumber, &element.Element, &element.Symbol, &element.AtomicMass, &element.NumberofNeutrons, &element.NumberofElectrons, &element.Period, &element.Group, &element.Phase, &element.Radioactive, &element.Natural, &element.Metal, &element.Nonmetal, &element.Metalloid, &element.Type, &element.AtomicRadius, &element.Electronegativity, &element.FirstIonization, &element.Density, &element.MeltingPoint, &element.BoilingPoint, &element.NumberOFIsotopes, &element.YearOfDiscovery, &element.SpecificHeat, &element.NumberofShells, &element.NumberofValence)
+	err := row.Scan(&element)
 
 	if err != nil {
 		return Element{}
