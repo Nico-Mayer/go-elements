@@ -47,6 +47,7 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 		&element.Symbol,
 		&element.AtomicMass,
 		&element.NumberOfNeutrons,
+		&element.NumberOfProtons,
 		&element.NumberOfElectrons,
 		&element.Period,
 		&element.Group,
