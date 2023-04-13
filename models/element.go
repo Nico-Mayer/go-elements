@@ -40,7 +40,8 @@ func ElementByAtomicNumber(atomicNumber int) Element {
 	query := `SELECT * FROM elements WHERE atomicnumber = $1`
 	row := db.DB.QueryRow(query, atomicNumber)
 
-	fmt.Println(row)
+	fmt.Println(&row)
+	fmt.Println(*row)
 
 	var element Element
 	err := row.Scan(&element)
