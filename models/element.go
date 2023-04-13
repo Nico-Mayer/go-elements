@@ -12,6 +12,7 @@ type Element struct {
 	Symbol            string   `json:"symbol"`
 	AtomicMass        float64  `json:"atomicMass"`
 	NumberOfNeutrons  int      `json:"numberOfNeutrons"`
+	NumberOfProtons   int      `json:"numberOfProtons"`
 	NumberOfElectrons int      `json:"numberOfElectrons"`
 	Period            int      `json:"period"`
 	Group             int      `json:"group"`
