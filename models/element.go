@@ -1,6 +1,10 @@
 package models
 
-import "github.com/nico-mayer/go-elements/db"
+import (
+	"fmt"
+
+	"github.com/nico-mayer/go-elements/db"
+)
 
 type Element struct {
 	AtomicNumber      int      `json:"atomicNumber"`
@@ -34,6 +38,8 @@ type Element struct {
 func ElementByAtomicNumber(atomicNumber int) Element {
 	query := `SELECT * FROM elements WHERE atomic_number = $1`
 	row := db.DB.QueryRow(query, atomicNumber)
+
+	fmt.Println(row)
 
 	var element Element
 	err := row.Scan(&element.AtomicNumber, &element.Element, &element.Symbol, &element.AtomicMass, &element.NumberofNeutrons, &element.NumberofElectrons, &element.Period, &element.Group, &element.Phase, &element.Radioactive, &element.Natural, &element.Metal, &element.Nonmetal, &element.Metalloid, &element.Type, &element.AtomicRadius, &element.Electronegativity, &element.FirstIonization, &element.Density, &element.MeltingPoint, &element.BoilingPoint, &element.NumberOFIsotopes, &element.YearOfDiscovery, &element.SpecificHeat, &element.NumberofShells, &element.NumberofValence)

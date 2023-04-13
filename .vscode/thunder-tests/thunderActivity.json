@@ -4,11 +4,11 @@
     "colId": "history",
     "containerId": "",
     "name": "https://go-elements.up.railway.app/elements/atomicNumber/1",
-    "url": "https://go-elements.up.railway.app/element/atomicNumber/2",
+    "url": "https://go-elements.up.railway.app/element/atomicNumber/1",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-04-13T11:24:23.903Z",
-    "modified": "2023-04-13T11:24:54.687Z",
+    "modified": "2023-04-13T11:26:57.822Z",
     "headers": [],
     "params": [],
     "tests": []
